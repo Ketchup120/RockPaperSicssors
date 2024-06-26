@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            background-color: #89C15E;
+        }
+        .back{
+            display: flex;
+            flex-direction: column;
+            background-image: url("stars.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            justify-content:center;
+            align-items: center;
+            height: 100vh;
+        }
+        .button{
+            border-radius: 3px;
+            background-color: aliceblue;
+            width :200px;
+            margin :10px;
+            letter-spacing: 5px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div class="back">
+            <div><img src="trophie.png" height="150px"></div>
+            <div>HURRAY!</div>
+            <div>YOU HAVE WON THE GAME</div>
+            <button class="button" onclick="window.location.href = 'index.html'">PLAY AGAIN</button>
+        </div>
+    </body>
+</html>

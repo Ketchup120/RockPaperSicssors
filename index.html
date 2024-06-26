@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            background-color: #89C15E;
+            font-family: Roboto;
+            font-style: normal;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .title{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 40px;
+        }
+        .scorecard{
+            display: flex;
+            border: 1px solid #ffffff;
+            border-radius: 2%;
+            justify-content:space-between ;
+            width: 800px;
+            height: 158px;
+            padding: 10px;
+        }
+        .scorebox{
+            display: flex;
+            flex-direction: column;
+            color: #004429;
+            background-color: #ffffff;
+            border-radius: 2%;
+            width: 139px;
+            height: 128px;
+            margin: auto;
+            margin-left: 10px;
+        }
+        .score{
+            font-family: Roboto;
+            font-size: 68px;
+            font-weight: 700;
+            line-height: 79.69px;
+            text-align: center;
+
+        }
+        .button{
+            border-radius: 3px;
+            background-color: aliceblue;
+            width :200px;
+            margin :10px;
+            letter-spacing: 5px;
+            text-align: center;
+        }
+        .rules{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        .rulebox{
+            background-color: #004429;
+            border: 5px solid #ffffff;
+            width: 250px;
+            height: 275px;
+            margin : 25px;
+            visibility: hidden;
+        }
+        .close{
+            display: flex;
+            justify-content: center;
+            float: right;
+            background-color: #FF0000;
+            border: 5px solid #ffffff;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -30px;
+            margin-right: -30px;
+            font-size: 40px;
+        }
+        .bottombuttton{
+            background-color: #89C15E;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            border-radius: 3px;
+            width :125px;
+            margin :10px;
+            letter-spacing: 15px;
+        }
+        .rock{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #0074B6;
+            background-image: url("rock.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .paper{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #FFA943;
+            background-image: url("paper.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .sicssors{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #BD00FF;
+            background-image: url("scissors.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .rulebuttons
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .result
+        {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            width: 700px;
+            margin: 70px;
+        }
+        .triangle {
+        width: 12em;
+        height: 12em;
+        border: 1em solid #000000A3;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-left: none;
+        border-top: none;
+        margin-top: 100px;
+        position: relative;
+        left: 5%;
+
+      }
+      .triangle:before {
+        position: absolute;
+        content: "";
+        border-top: 1em solid #000000A3;
+        width: calc(1.41 * (12em + 1em));
+        transform: rotate(-45deg);
+        left: -3em;
+        top: 5.7em;
+      }
+        .trirock{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #0074B6;
+            background-image: url("rock.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 80%;
+            margin-left: -50px;
+            transform: rotate(-45deg);
+        }
+        .tripaper{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #FFA943;
+            background-image: url("paper.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 80%;
+            top: 30%;
+            transform: rotate(-45deg);
+        }
+        .trisicssors{
+            display: flex;
+            justify-content: center;
+            border: 8px solid #BD00FF;
+            background-image: url("scissors.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            bottom: 80%;
+            float: right;
+            margin-right: -60px;
+            transform: rotate(-45deg);
+        }
+    </style>
+    <body id = "body" onload="updatescore()">
+        <div class="scorecard">
+            <div class="title">
+                <div>ROCK</div>
+                <div>PAPER</div>
+                <div>SICSSORS</div>
+            </div>
+            <div style="display: flex;justify-content: center;">
+                <div class="scorebox">
+                    <div style="text-align: center;">YOUR <br> SCORE</div>
+                    <div class="score" id = "player"></div>
+                </div>
+                <div class="scorebox">
+                    <div style="text-align: center;">COMPUTER <br> SCORE</div>
+                    <div class="score" id = "pc"></div>    
+                </div>
+            </div>
+        </div>
+        <div class="rules">
+            <div class="rulebox" id = "rulebox">
+                <button class="close" onclick="closerules()">
+                       X
+                </button>
+            </div>
+            <div id = "rulebuttons" >
+                <button class="bottombuttton" style="float: right;" onclick="openrules()">
+                    RULES
+                </button>
+            </div>
+        </div>
+        <div class="triangle" id = "playbuttons">
+                <button class="trirock" onclick="rockpick()"></button>
+                <button class="trisicssors" onclick="sicssorspick()"></button>
+                <button class="tripaper" onclick="paperpick()"></button>
+        </div>
+    </body>
+    <script>
+        let playerscore = parseInt(localStorage.getItem('playerscore')) || 0;
+        let pcscore = parseInt(localStorage.getItem('pcscore')) || 0;
+        function updatescore()
+        {
+            const elem = document.getElementById("player");
+            elem.innerHTML = playerscore;
+            console.log(pcscore);
+            const elem1= document.getElementById("pc");
+            elem1.innerHTML = pcscore;
+        }
+        const popup = document.getElementById("rulebox");
+        let flag = 0;
+        function closerules()
+        {
+            popup.style.visibility = "hidden";
+        }
+        function openrules()
+        {
+            popup.style.visibility = "visible";
+        }
+        const body = document.getElementById("playbuttons");
+        function rockpick()
+        {
+            let a = Math.floor(Math.random() * 3)+1;
+            console.log(a);
+            if(a == 1)
+            {
+                resultdisplay("rock","rock","TIED UP");
+            }
+            if(a == 2)
+            {
+                resultdisplay("rock","paper","LOST");
+            }
+            if(a == 3)
+            {
+                resultdisplay("rock","sicssors","WON");
+            }
+        }
+        function sicssorspick()
+        {
+            let a = Math.floor(Math.random() * 3)+1;
+            console.log(a);
+            if(a == 1)
+            {
+                resultdisplay("sicssors","rock","LOST");
+            }
+            if(a == 2)
+            {
+                resultdisplay("sicssors","paper","WON");
+            }
+            if(a == 3)
+            {
+                resultdisplay("sicssors","sicssors","TIED UP");
+            }
+        }
+        function paperpick()
+        {
+            let a = Math.floor(Math.random() * 3)+1;
+            console.log(a);
+            if(a == 1)
+            {
+                resultdisplay("paper","rock","WON");
+            }
+            if(a == 2)
+            {
+                resultdisplay("paper","paper","TIED UP");
+            }
+            if(a == 3)
+            {
+                resultdisplay("paper","sicssors","LOST");
+            }
+        }
+        function resultdisplay(class1,class2,result){
+            if(result == "WON")
+            {
+                playerscore++;
+                localStorage.setItem("playerscore",playerscore);
+                updatescore();
+            }
+            if(result == "LOST")
+            {
+                pcscore++;
+                localStorage.setItem("pcscore",pcscore);
+                updatescore();
+            }
+            body.innerHTML = ""
+            body.classList.remove("triangle")
+            body.classList.add("result");
+            const parent = document.createElement("div");
+            const schild1 = document.createElement("div");
+            schild1.innerHTML = "YOU CHOSE";
+            schild1.style.textAlign = "center";
+            schild1.style.fontSize = "20px";
+            schild1.style.marginBottom = "10px"
+            const schild2 = document.createElement("button");
+            console.log("class1"+class1);
+            schild2.classList.add(class1);
+            schild2.style.height = "125px";
+            schild2.style.width = "125px";
+            const child1 = document.createElement("div");
+            child1.classList.add("title");
+            child1.appendChild(schild1);
+            child1.appendChild(schild2);
+            const child2 = document.createElement("div");
+            if(result == "TIED UP")
+            {
+                const schild1 = document.createElement("div");
+                schild1.innerHTML = "TIED UP";
+                schild1.style.textAlign = "center";
+                const schild2 = document.createElement("button");
+                schild2.classList.add("button");
+                schild2.setAttribute("onclick","reset()");
+                schild2.innerHTML = "REPLAY";
+                schild2.style.textAlign = "center";
+                child2.appendChild(schild1);
+                child2.appendChild(schild2);
+                child2.classList.add("title");
+            }
+            else
+            {
+            const schild1 = document.createElement("div");
+            schild1.innerHTML = "YOU "+result;
+            schild1.style.textAlign = "center"
+            const schild2 = document.createElement("div");
+            schild2.innerHTML = "AGAINST PC";
+            schild2.style.textAlign = "center"
+            const schild3 = document.createElement("button");
+            schild3.classList.add("button");
+            schild3.setAttribute("onclick","reset()");
+            schild3.innerHTML = "PLAY AGAIN";
+            child2.classList.add("title");
+            child2.appendChild(schild1);
+            child2.appendChild(schild2);
+            child2.appendChild(schild3);
+            }
+            const xchild1 = document.createElement("div");
+            xchild1.innerHTML = "PC CHOSE";
+            xchild1.style.fontSize = "20px";
+            xchild1.style.marginBottom = "10px";
+            xchild1.style.textAlign = "center";
+            const xchild2 = document.createElement("button");
+            xchild2.classList.add(class2);
+            xchild2.style.height = "125px";
+            xchild2.style.width = "125px";
+            const child3 = document.createElement("div");
+            child3.classList.add("title");
+            child3.appendChild(xchild1);
+            child3.appendChild(xchild2);
+            body.appendChild(child1);
+            body.appendChild(child2);
+            body.appendChild(child3);
+            if(result == "WON")
+            {
+                flag = 1;
+                const node = document.createElement("button");
+                node.classList.add("bottombuttton");
+                node.innerHTML = "NEXT";
+                node.onclick = function(){
+                    window.location.href = "win.html"
+                }
+                const elem = document.getElementById("rulebuttons");
+                elem.children[0].style.cssFloat = "none";
+                elem.appendChild(node);
+                elem.classList.add("rulebuttons")
+            }
+        }
+        function reset(){
+            if(flag == 1)
+            {
+                flag = 0;
+                const elem = document.getElementById("rulebuttons");
+                elem.removeChild(elem.lastChild);
+                elem.children[0].style.cssFloat = "right";
+                elem.classList.remove("rulebuttons");
+            }
+            body.innerHTML = "";
+            body.classList.remove("result");
+            body.classList.add("triangle");
+            const child1 = document.createElement("button");
+            child1.classList.add("trirock");
+            child1.setAttribute("onclick","rockpick()");
+            const child2 = document.createElement("button");
+            child2.classList.add("trisicssors");
+            child2.setAttribute("onclick","sicssorspick()");
+            const child3 = document.createElement("button");
+            child3.classList.add("tripaper");
+            child3.setAttribute("onclick","paperpick()");
+            body.appendChild(child1);
+            body.appendChild(child2);
+            body.appendChild(child3);
+        }
+    </script>
+</html>
+
