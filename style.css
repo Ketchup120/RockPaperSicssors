@@ -1,0 +1,233 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+}
+.scorecard{
+    display: flex;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    justify-content:space-between ;
+    width: 800px;
+    height: 158px;
+    padding: 10px;
+}
+.scorebox{
+    display: flex;
+    flex-direction: column;
+    color: #004429;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 139px;
+    height: 128px;
+    margin: auto;
+    margin-left: 10px;
+}
+.score{
+    font-family: Roboto;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 79.69px;
+    text-align: center;
+
+}
+.button{
+    border-radius: 7px;
+    background-color: aliceblue;
+    width :170px;
+    height: 40px;
+    margin :10px;
+    border: none;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.rules{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.rulebox{
+    background-color: #004429;
+    border: 5px solid #ffffff;
+    width: 250px;
+    height: 275px;
+    margin : 25px;
+    visibility: hidden;
+}
+.close{
+    display: flex;
+    justify-content: center;
+    float: right;
+    background-color: #FF0000;
+    border: 5px solid #ffffff;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-top: -30px;
+    margin-right: -30px;
+    font-size: 40px;
+}
+.bottombuttton{
+    background-color: #89C15E;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 6px;
+    width :125px;
+    height: 30px;
+    margin :10px;
+    letter-spacing: 15px;
+}
+.rock{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #0074B6;
+    background-image: url("rock.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.paper{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #FFA943;
+    background-image: url("paper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.sicssors{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #BD00FF;
+    background-image: url("scissors.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.rulebuttons
+{
+    display: flex;
+    justify-content: space-between;
+}
+.result
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 700px;
+    margin: 70px;
+}
+.triangle {
+width: 12em;
+height: 12em;
+border: 1em solid #000000A3;
+transform: translate(-50%, -50%) rotate(45deg);
+border-left: none;
+border-top: none;
+margin-top: 100px;
+position: relative;
+left: 5%;
+
+}
+.triangle:before {
+position: absolute;
+content: "";
+border-top: 1em solid #000000A3;
+width: calc(1.41 * (12em + 1em));
+transform: rotate(-45deg);
+left: -3em;
+top: 5.7em;
+}
+.trirock{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #0074B6;
+    background-image: url("rock.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 80%;
+    margin-left: -50px;
+    transform: rotate(-45deg);
+}
+.tripaper{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #FFA943;
+    background-image: url("paper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 80%;
+    top: 30%;
+    transform: rotate(-45deg);
+}
+.trisicssors{
+    display: flex;
+    justify-content: center;
+    border: 8px solid #BD00FF;
+    background-image: url("scissors.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 80%;
+    float: right;
+    margin-right: -60px;
+    transform: rotate(-45deg);
+}
+li{
+    list-style: square;
+    color: yellow;
+}
+li span{
+    color: #ffffff;
+}
+.back{
+    display: flex;
+    flex-direction: column;
+    background-image: url("stars.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80vh;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    margin-top: 20px;
+    height: 60vh;
+}
+.buttonx{
+    border-radius: 10px;
+    background-color: aliceblue;
+    width :200px;
+    height: 40px;
+    margin :10px;
+    letter-spacing: 5px;
+    color: black;
+    text-align: center;
+    border: none;
+}
+.text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,40 +1,14 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>RockPaperSicssors</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
     <style>
         body{
             background-color: #89C15E;
             color: white;
             font-family: Geneva, sans-serif;
-        }
-        .back{
-            display: flex;
-            flex-direction: column;
-            background-image: url("stars.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 80vh;
-            text-align: center;
-            justify-content:center;
-            align-items: center;
-            margin-top: 20px;
-            height: 60vh;
-        }
-        .button{
-            border-radius: 10px;
-            background-color: aliceblue;
-            width :200px;
-            height: 40px;
-            margin :10px;
-            letter-spacing: 5px;
-            color: black;
-            text-align: center;
-            border: none;
-        }
-        .text{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
         }
     </style>
     <body>
@@ -42,9 +16,44 @@
             <div><img src="trophie.png" height="150px" style="margin-top: 100%;"></div>
         </div>
         <div class="text">
-            <div style="font-size: 100px;">HURRAY!</div>
+            <div style="font-size: 100px;">HURRAY!!</div>
             <div style="font-size: 35px;">YOU HAVE WON THE GAME</div>
-            <button class="button" onclick="window.location.href = 'index.html'">PLAY AGAIN</button>
+            <button class="buttonx" onclick="window.location.href = 'index.html'">PLAY AGAIN</button>
         </div>
+        <div class="rules">
+            <div class="rulebox" id = "rulebox">
+                <button class="close" onclick="closerules()">
+                       X
+                </button>
+                <ul>
+                    <li>
+                    <span>
+                        Rock beats scissors, scissors beat paper, and paper beats rock.
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        If both players lay down the same hand, each player lays down another hand
+                    </span>
+                    </li>
+                </ul>
+            </div>
+            <div id = "rulebuttons" >
+                <button class="bottombuttton" style="float: right;" onclick="openrules()">
+                    RULES
+                </button>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
