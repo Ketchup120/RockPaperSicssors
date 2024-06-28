@@ -3,6 +3,8 @@
     <style>
         body{
             background-color: #89C15E;
+            color: white;
+            font-family: Geneva, sans-serif;
         }
         .back{
             display: flex;
@@ -10,25 +12,38 @@
             background-image: url("stars.png");
             background-position: center;
             background-repeat: no-repeat;
+            background-size: 80vh;
             text-align: center;
             justify-content:center;
             align-items: center;
-            height: 100vh;
+            margin-top: 20px;
+            height: 60vh;
         }
         .button{
-            border-radius: 3px;
+            border-radius: 10px;
             background-color: aliceblue;
             width :200px;
+            height: 40px;
             margin :10px;
             letter-spacing: 5px;
+            color: black;
             text-align: center;
+            border: none;
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
     <body>
         <div class="back">
-            <div><img src="trophie.png" height="150px"></div>
-            <div>HURRAY!</div>
-            <div>YOU HAVE WON THE GAME</div>
+            <div><img src="trophie.png" height="150px" style="margin-top: 100%;"></div>
+        </div>
+        <div class="text">
+            <div style="font-size: 100px;">HURRAY!</div>
+            <div style="font-size: 35px;">YOU HAVE WON THE GAME</div>
             <button class="button" onclick="window.location.href = 'index.html'">PLAY AGAIN</button>
         </div>
     </body>
