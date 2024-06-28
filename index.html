@@ -3,7 +3,7 @@
     <style>
         body{
             background-color: #89C15E;
-            font-family: Roboto;
+            font-family: Geneva, sans-serif;
             font-style: normal;
             color: #ffffff;
             display: flex;
@@ -203,6 +203,13 @@
             margin-right: -60px;
             transform: rotate(-45deg);
         }
+        li{
+            list-style: square;
+            color:yellow;
+        }
+        li span{
+            color: #ffffff;
+        }
     </style>
     <body id = "body" onload="updatescore()">
         <div class="scorecard">
@@ -227,6 +234,28 @@
                 <button class="close" onclick="closerules()">
                        X
                 </button>
+                <ul>
+                    <li>
+                    <span>
+                        Rock beats scissors, scissors beat paper, and paper beats rock.
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+                    </span>
+                    </li>
+                    <li>
+                    <span>
+                        If both players lay down the same hand, each player lays down another hand
+                    </span>
+                    </li>
+                </ul>
             </div>
             <div id = "rulebuttons" >
                 <button class="bottombuttton" style="float: right;" onclick="openrules()">
@@ -336,7 +365,6 @@
             schild1.style.fontSize = "20px";
             schild1.style.marginBottom = "10px"
             const schild2 = document.createElement("button");
-            console.log("class1"+class1);
             schild2.classList.add(class1);
             schild2.style.height = "125px";
             schild2.style.width = "125px";
@@ -404,7 +432,7 @@
                 const elem = document.getElementById("rulebuttons");
                 elem.children[0].style.cssFloat = "none";
                 elem.appendChild(node);
-                elem.classList.add("rulebuttons")
+                elem.classList.add("rulebuttons");
             }
         }
         function reset(){
