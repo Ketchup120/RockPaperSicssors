@@ -205,7 +205,7 @@
         }
         li{
             list-style: square;
-            color:yellow;
+            color: yellow;
         }
         li span{
             color: #ffffff;
@@ -364,10 +364,16 @@
             schild1.style.textAlign = "center";
             schild1.style.fontSize = "20px";
             schild1.style.marginBottom = "10px"
+            schild1.style.zIndex = "99 !important";
+            schild1.style.position = "relative";
             const schild2 = document.createElement("button");
             schild2.classList.add(class1);
             schild2.style.height = "125px";
             schild2.style.width = "125px";
+            if(result == "WON")
+            {
+            schild2.style.boxShadow = "0 0 0 20px rgb(2, 162, 47), 0 0 0 30px rgba(2, 162, 47, 0.705), 0 0 0 40px rgba(0, 153, 43, 0.49)";
+            }
             const child1 = document.createElement("div");
             child1.classList.add("title");
             child1.appendChild(schild1);
@@ -409,10 +415,16 @@
             xchild1.style.fontSize = "20px";
             xchild1.style.marginBottom = "10px";
             xchild1.style.textAlign = "center";
+            xchild1.style.zIndex = "99 !important";
+            xchild1.style.position = "relative";
             const xchild2 = document.createElement("button");
             xchild2.classList.add(class2);
             xchild2.style.height = "125px";
             xchild2.style.width = "125px";
+            if(result == "LOST")
+            {
+            xchild2.style.boxShadow = "0 0 0 20px rgb(2, 162, 47), 0 0 0 30px rgba(2, 162, 47, 0.705), 0 0 0 40px rgba(0, 153, 43, 0.49)";
+            }
             const child3 = document.createElement("div");
             child3.classList.add("title");
             child3.appendChild(xchild1);
